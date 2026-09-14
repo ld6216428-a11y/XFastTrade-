@@ -1524,5 +1524,23 @@ renderCompanies();
 renderProducts();
 </script>
 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAbBIAMyhqIxT6e96ipmjoQ8odim17gGhs",
+    authDomain: "xfasttrade-1a191.firebaseapp.com",
+    projectId: "xfasttrade-1a191",
+    storageBucket: "xfasttrade-1a191.firebasestorage.app",
+    messagingSenderId: "902173615330",
+    appId: "1:902173615330:web:2af33224b26da08c96eabb",
+    measurementId: "G-8DMV50YHYT"
+  };
+
+  const app = initializeApp(firebaseConfig);
+
+  console.log("Firebase berhasil terhubung");
+</script>
+
 </body>
 </html>
