@@ -1524,8 +1524,16 @@ renderCompanies();
 renderProducts();
 </script>
 
+<!-- Firebase XFastTrade -->
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyAbBIAMyhqIxT6e96ipmjoQ8odim17gGhs",
@@ -1533,13 +1541,23 @@ renderProducts();
     projectId: "xfasttrade-1a191",
     storageBucket: "xfasttrade-1a191.firebasestorage.app",
     messagingSenderId: "902173615330",
-    appId: "1:902173615330:web:2af33224b26da08c96eabb",
-    measurementId: "G-8DMV50YHYT"
+    appId: "1:902173615330:web:0a5648f486ccf7d596eabb",
+    measurementId: "G-2GS2MMSWLZ"
   };
 
   const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-  console.log("Firebase berhasil terhubung");
+  // Firebase siap digunakan untuk login dan register.
+  window.firebaseAuth = auth;
+  window.firebaseFunctions = {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
+  };
+  
+  console.log("Firebase XFastTrade berhasil terhubung!");
 </script>
 
 </body>
